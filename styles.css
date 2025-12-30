@@ -253,16 +253,16 @@ body {
 
 /* Language Switcher */
 .language-switcher {
-    position: absolute;
+     position: fixed;     /* ✅ change from absolute → fixed */
     top: 32px;
-    left: 32px;
+    right: 88px;         /* ✅ move near theme icon */
+    left: auto;          /* ✅ remove left */
     display: flex;
     gap: 8px;
     background: rgba(0, 0, 0, 0.04);
     padding: 4px;
     border-radius: 12px;
-    z-index: 10;
-    transition: all 0.3s ease;
+    z-index: 10000;
 }
 
 .lang-btn {
@@ -302,7 +302,7 @@ body {
 
 /* Theme Toggle */
 .theme-toggle {
-    position: absolute;
+    position: fixed;     /* ✅ absolute → fixed */
     top: 32px;
     right: 32px;
     width: 40px;
@@ -313,9 +313,7 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s ease;
-    color: #64748b;
-    z-index: 10;
+    z-index: 10000;
 }
 
 .theme-toggle:hover {
@@ -763,6 +761,16 @@ body {
         right: 16px;
         top: 16px;
     }
+
+     .language-switcher {
+        top: 16px;
+        right: 72px;
+    }
+
+    .theme-toggle {
+        top: 16px;
+        right: 16px;
+    }
 }
 
 /* Responsive Design for Small Mobile (480px and below) */
@@ -936,3 +944,25 @@ body.dark .dark-logo {
 .container {
     background: linear-gradient(135deg, #c6d4fa 0%, #dff9fa 100%); /* single uniform background */
 }
+
+
+
+/* Optional: style buttons */
+.language-switcher {
+    display: flex;
+    gap: 6px;
+}
+
+.lang-btn {
+    cursor: pointer;
+    font-size: 14px;
+    padding: 4px 8px;
+}
+
+.theme-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+
